@@ -25,7 +25,7 @@ tf.executing_eagerly()
 
 
 # dowlnoad data
-pathFolder = '/home/masdoua1u/Desktop/stage/ABP PPG new method/3 ondes NewBDD +/'
+pathFolder = '3 ondes NewBDD +/'
 pFile = 'PPG3_all.csv'
 #tFiler = 'time.csv'
 sbpFile = 'SBP3_all.csv'
@@ -76,7 +76,7 @@ tf.keras.utils.plot_model(
 callbacks_list = [
         #EarlyStopping(monitor='val_loss', patience=1000), # Arret du programme en fonction de la patience souhaitée
         ModelCheckpoint(
-        filepath='/home/masdoua1u/Desktop/stage/ABP PPG new method/best_model.{val_loss:.3f}-{epoch:02d}.h5', # sauvegarde du modèle.
+        filepath='best_model.{val_loss:.3f}-{epoch:02d}.h5', # sauvegarde du modèle.
         monitor='val_loss', save_best_only=True),
 ]
 
