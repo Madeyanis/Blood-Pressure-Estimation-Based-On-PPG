@@ -58,12 +58,11 @@ train_p, test_p = myExpandForNetwork2(train_p, test_p)
 
 # creer un modèle
 model = create_res_net_SetD_NewPPG(myInputs=(768, 1))
-#model = tf.keras.models.load_model('/home/masdoua1u/Desktop/stage/ABP PPG new method/test 12 BDD sans bousef/best_model.3.853-11.h5')
 
 # ploter l'architecture neuronale en format png
 tf.keras.utils.plot_model(
     model,
-    to_file="/home/masdoua1u/Desktop/stage/ABP PPG new method/model.png",
+    to_file="model.png",
     show_shapes=False,
     show_layer_names=True,
     rankdir="TB",
@@ -94,6 +93,6 @@ history = model.fit(x=train_p,
 
 # Sauvegarde de l'historique 
 hist_df = pd.DataFrame(history.history)
-with open("/home/masdoua1u/Desktop/stage/ABP PPG new method/history_CNN.csv", mode='w') as h:
+with open("history_CNN.csv", mode='w') as h:
     hist_df.to_csv(h)
 
