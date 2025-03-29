@@ -25,7 +25,7 @@ tf.compat.v1.disable_eager_execution()
 tf.executing_eagerly()
 
 
-model = tf.keras.models.load_model('/home/masdoua1u/Desktop/stage/New/ResNet_LSTM/best_model.1.407-02.h5')
+model = tf.keras.models.load_model('best_model.1.407-02.h5')
 
 pathFolder = '/home/masdoua1u/Desktop/stage/Data/'
 pFile = 'PPG3_all.csv'
