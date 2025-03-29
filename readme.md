@@ -38,19 +38,7 @@ This project aims to estimate blood pressure using photoplethysmogram (PPG) sign
     python evaluate.py --model models/trained_model.pkl --test data/test_ppg.csv
     ```
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ## Acknowledgments
 
 - Thanks to the open-source community for tools and libraries.
 - Special thanks to researchers in the field of PPG signal analysis.
-
-## Contact
-
-For questions or suggestions, please contact [your-email@example.com].
