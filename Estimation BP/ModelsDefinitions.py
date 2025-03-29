@@ -438,47 +438,6 @@ def create_res_net_SetD_PPG(myInputs=(1024, 1), units_LSTM = 115, units_FullyCon
     return model
 
 
-
-'''
-def create_res_net_SetD_NewPPG(myInputs=(256, 1), units_LSTM=115, units_FullyConnected=25, filters=64):
-        
-    inputs = Input(myInputs)
-    num_filters = filters
-    
-    t = BatchNormalization()(inputs)
-    t = Conv1D(kernel_size=27,
-               strides=1,
-               filters=num_filters,
-               padding="same")(t)
-    t = relu_bn(t)
-    t = Dropout(0.1)(t)
-    
-    num_blocks_list = [2, 3, 3, 3]
-    for i in range(len(num_blocks_list)):
-        num_blocks = num_blocks_list[i]
-        for j in range(num_blocks):
-            t = residual_block(t, downsample=(j==0 and i!=0), filters=num_filters)
-        
-    
-    t = AveragePooling1D(4)(t)
-    #t = Flatten()(t)
-    
-    t = Bidirectional(LSTM(units=units_LSTM))(t)
-    #outputs = Dense(units=units_FullyConnected, activation="relu")(t)
-    outputs = Dropout(0.2)(t)
-    outputs = Dense(2, activation='relu')(outputs)
-    
-
-    model = Model(inputs, outputs)
-    opt = tf.keras.optimizers.Adam(lr=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=1e-06)
-    model.compile(
-        optimizer=opt,
-        loss=rmse)
-
-    return model
-'''
-
-
 # cette architecture à 30 couches est la derniere avec un rmse de 1.90.
 def create_res_net_SetD_NewPPG(myInputs=(256, 1), units_LSTM=115, units_FullyConnected=25, filters=64):
         
